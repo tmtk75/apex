@@ -19,6 +19,7 @@ const Dir = "infrastructure"
 
 // Proxy is a wrapper around Terraform commands.
 type Proxy struct {
+	ProjectName string
 	Functions   []*function.Function
 	Environment string
 	Region      string
@@ -49,6 +50,9 @@ func (p *Proxy) Run(args ...string) error {
 func (p *Proxy) functionVars() (args []string) {
 	args = append(args, "-var")
 	args = append(args, fmt.Sprintf("aws_region=%s", p.Region))
+
+	args = append(args, "-var")
+	args = append(args, fmt.Sprintf("apex_project_name=%s", p.ProjectName))
 
 	args = append(args, "-var")
 	args = append(args, fmt.Sprintf("apex_environment=%s", p.Environment))

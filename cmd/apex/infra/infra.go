@@ -46,6 +46,7 @@ func run(c *cobra.Command, args []string) error {
 	}
 
 	p := &infra.Proxy{
+		ProjectName: root.Project.Name,
 		Functions:   root.Project.Functions,
 		Region:      *root.Session.Config.Region,
 		Environment: root.Project.Environment,

@@ -28,6 +28,7 @@ The environment is specified via the `--env` flag, or by default falls back on t
 Currently the following variables are exposed to Terraform:
 
 - `aws_region` the AWS region name such as "us-west-2"
+- `apex_project_name` the project name
 - `apex_environment` the environment name such as "prod" or "stage"
 - `apex_function_role` the Lambda role ARN
 - `apex_function_NAME` Lambda function ARNs by __NAME__
